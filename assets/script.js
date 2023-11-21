@@ -38,30 +38,23 @@ arrow_right.addEventListener('click', () => {
 	console.log('Flèche droite cliquée!');
 });
 
-
-// le chemin relatif +le nom de fichier du tableau, débutant à l'index 0 pour la première image.
-
-imageBanner.src = "assets/images/slideshow/" + slides[0].image;
-imageBanner.alt = slides[0].tagLine;
-
 // ------------------------- Dots
 
+//For indique le nombre de dots,tant que l'index du point' est inférieur à la taille du tableau, on ajoute +1 à l'index du point
 //Ajout de 4 divs ".dot" à la div parente ".dots"
-//For indique le nombre de dots,tant que i est inférieur à la taille du tableau, on ajoute +1 à i
-
 for (let i = 0; i < numberOfDots; i++) {
-	const dotElement = document.createElement('div');
-	dotElement.classList.add('dot');
-	dots.appendChild(dotElement);
+	const point = document.createElement('div');
+	point.classList.add('dot'); // on modifie la classe
+	dots.appendChild(point);
   
-	if (i === compteur) dotElement.classList.add("dot_selected");
+	if (i === compteur) point.classList.add("dot_selected");
 
 // -------------- les dots changes quand on clique sur les fleche ou sur les dots
-	dotElement.addEventListener('click', () => {
+	point.addEventListener('click', () => {
 	  changeSlide(i);
 	});
   }
-  
+
  //-------------- changement d'images et texte au clic
   arrow_left.addEventListener('click', () => {
 	compteur = (compteur - 1 + slides.length) % slides.length;
@@ -75,14 +68,17 @@ for (let i = 0; i < numberOfDots; i++) {
   
 
   function changeSlide(index) {
+	// Met à jour l'image et le texte
 	imageBanner.src = `assets/images/slideshow/${slides[index].image}`;
 	text.innerHTML = slides[index].tagLine;
   
+	// Met à jour les points indicateurs
 	const allDots = dots.children;
 	for (let i = 0; i < allDots.length; i++) {
 	  allDots[i].classList.toggle("dot_selected", i === index);
 	}
-  
+
+	 // Met à jour le compteur 
 	compteur = index;
 	console.log("Changement de diapositive réussi!");
   }
