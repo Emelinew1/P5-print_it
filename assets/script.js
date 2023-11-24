@@ -44,7 +44,7 @@ arrow_right.addEventListener('click', () => {
 //Ajout de 4 divs ".dot" à la div parente ".dots"
 for (let i = 0; i < slides.length; i++) {
 	const point = document.createElement('div');
-	point.classList.add('dot'); // on modifie la classe
+	point.classList.add('dot'); // on ajoute la classe
 	dots.appendChild(point);
   
 	if (i === compteur) point.classList.add("dot_selected");
@@ -56,7 +56,8 @@ for (let i = 0; i < slides.length; i++) {
   }
 
  //-------------- changement d'images et texte au clic de maniere indéfini
- function changeSlide(index) {
+
+  function changeSlide(index) {
 	// Met à jour l'image et le texte
 	imageBanner.src = `assets/images/slideshow/${slides[index].image}`;
 	text.innerHTML = slides[index].tagLine;
@@ -71,9 +72,7 @@ for (let i = 0; i < slides.length; i++) {
 	compteur = index;
 	console.log("Changement de diapositive réussi!");
   }
-
-  
- arrow_left.addEventListener('click', () => {
+  arrow_left.addEventListener('click', () => {
 	compteur = (compteur - 1 + slides.length) % slides.length;
 	changeSlide(compteur);
   });
@@ -82,6 +81,11 @@ for (let i = 0; i < slides.length; i++) {
 	compteur = (compteur + 1) % slides.length;
 	changeSlide(compteur);
   });
+
+
+
+
+ 
   
 
   
