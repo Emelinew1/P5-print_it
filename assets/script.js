@@ -20,12 +20,12 @@ const slides = [
 	}
 ]
 
-const imageBanner	   = document.querySelector(".banner-img");
-const arrowLeft 	   = document.querySelector('.arrow_left');
-const arrowRight 	   = document.querySelector('.arrow_right');
-const dots 			   = document.querySelector('.dots');
-const text 			   = document.getElementById("banner").querySelector("p");
-const NUMBER_OF_DOTS   = slides.length;
+const imageBanner 	  = document.querySelector(".banner-img");
+const arrowLeft 	  = document.querySelector('.arrow_left');
+const arrowRight 	  = document.querySelector('.arrow_right');
+const dots 			  = document.querySelector('.dots');
+const text 			  = document.querySelector("#banner p");
+const NUMBER_OF_DOTS  = slides.length;
 
 // ------------------------- VARIABLES
 let counter = 0;
