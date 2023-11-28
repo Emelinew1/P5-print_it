@@ -48,17 +48,20 @@ function moveLeft() {
 	counter = (counter - 1 + slides.length) % slides.length;
 	changeSlide(counter);
 }
+
 /* Moves the slide to the right */
 function moveRight() {
 	counter = (counter + 1) % slides.length;
 	changeSlide(counter);
 }
+
 /* Adds event listeners for the arrowLeft and arrowRight elements */
 function addListeners() {
 	arrowLeft.addEventListener('click', moveLeft);
 	arrowRight.addEventListener('click', moveRight);
 
 }
+
 /* Creates dots for each slide in the slideshow */
 function addDots() {
 	for (let i = 0; i < slides.length; i++) {
@@ -69,6 +72,7 @@ function addDots() {
 		dots.appendChild(point);
 	}
 }
+
 // *************** CODE PRINCIPAL ***************
 addDots();
 addListeners();
